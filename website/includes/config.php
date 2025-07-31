@@ -1,12 +1,16 @@
 <?php
     // Base-line redirect URL so the SSH doesn't get flipping confused af
-    const BASE_URL = '/CyberCity/website/';
+    const BASE_URL = '/src/website/';
+
+
 
     // Had to be done because PHPStorm wouldn't play ball
-    $serverHost = "10.177.202.196";
-    $dbUsr = "CyberCity";
-    $dbPwd = "CyberCity";
-    $dbName = "CyberCity";
+    $serverHost = "localhost";
+    $dbUsr = "devuser";
+    $dbPwd = "devpass";
+    $dbName = "devdb";
+
+
 
 date_default_timezone_set("Australia/Sydney");
 
@@ -22,7 +26,7 @@ date_default_timezone_set("Australia/Sydney");
     try {
         $conn = new PDO("mysql:host=$serverHost;dbname=$dbName", $dbUsr, $dbPwd, $pdoFullOpt);
         // echo "Connected successfully";
-
+       
     } catch (PDOException $e) {
         // Failed to connect the database
         die("Connection failed: " . $e -> getMessage());
